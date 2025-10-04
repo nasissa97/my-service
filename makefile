@@ -25,6 +25,22 @@ curl-error:
 
 curl-panic:
 	curl -il -X GET http://localhost:3000/testpanic
+
+admin:
+	go run api/tooling/admin/main.go
+
+# ==============================================================================
+# CLASS NOTES
+#
+# Kind
+# 	For full Kind v0.30 release notes: https://github.com/kubernetes-sigs/kind/releases/tag/v0.30.0
+#
+# RSA Keys
+# 	To generate a private/public key PEM file.
+# 	$ openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
+# 	$ openssl rsa -pubout -in private.pem -out public.pem
+# 	$ ./admin genkey
+#
 # ==============================================================================
 # Define dependencies
 
